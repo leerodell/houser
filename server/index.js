@@ -10,7 +10,7 @@ const { SERVER_PORT, CONNECTION_STRING } = process.env;
 
 massive(CONNECTION_STRING).then(dbInstance => {
   app.set("db", dbInstance);
-  // dbInstance.init();
+  dbInstance.init();
   console.log("Successfully Connected to Database");
 });
 

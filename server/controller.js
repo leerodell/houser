@@ -60,6 +60,7 @@ module.exports = {
     },
     deleteHouse(req, res) {
       let { id } = req.params;
+      //SWITCH FROM PARAM TO QUERY FOR POINTS
   
       if (!parseInt(id, 10)) {
         return res
