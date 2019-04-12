@@ -13,6 +13,7 @@ class App extends Component {
           <Link to="/">Dashboard</Link>
           <Link to="/wizard">Wizard</Link>
         </header>
+        {routes}
       </div>
     );
   }

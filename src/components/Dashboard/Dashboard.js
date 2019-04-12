@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import axios from "axios";
-
+import "./dashboard.css"
 import { Link } from "react-router-dom";
 
 export default class Dashboard extends Component {
@@ -8,18 +8,18 @@ export default class Dashboard extends Component {
     super(props);
 
     this.state = {
-      Houses: []
+      houses: []
     };
 
-    this.getAllHouses = this.getAllHouses.bind(this);
-    this.deleteCouch = this.deleteCouch.bind(this);
+    this.getHouses = this.getHouses.bind(this);
+    this.deleteHouse = this.deleteHouse.bind(this);
   }
 
   componentDidMount() {
-    this.getAllHouses();
+    this.getHouses();
   }
 
-  getAllHouses() {
+  getHouses() {
     axios.get("/api/houses").then(res => {
       this.setState({
         houses: res.data
@@ -27,26 +27,29 @@ export default class Dashboard extends Component {
     });
   }
 
-  deleteCouch(id) {
+  deleteHouse(id) {
     axios.delete(`/api/houses/${id}`).then(res => {
       this.setState({
         houses: res.data
       });
-      // this.getAllHouses()
+
     });
   }
 
   render() {
     const { houses } = this.state;
 
-    const houseDisplay = houses.map(prod => {
+    const houseDisplay = houses.map(house => {
       return (
-        <div className="couch" key={prod.house_id}>
-          <h3>{prod.name}</h3>
-          <h3>${prod.price}.00</h3>
-          <img src={prod.img} alt="couch" />
-          <Link to={`/edit/${prod.house_id}`}>Edit</Link>
-          <button onClick={() => this.deleteCouch(prod.house_id)}>
+        <div className="house" key={house.house_id}>
+          <h3>{house.property_name}</h3>
+          <h3>{house.address}</h3>
+          <h3>{house.city}</h3>
+          <h3>{house.state}</h3>
+          <h3>{house.zip}</h3>
+          
+          <Link to={`/edit/${house.house_id}`}>Edit</Link>
+          <button onClick={() => this.deleteHouse(house.house_id)}>
             Delete
           </button>
         </div>

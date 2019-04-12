@@ -1,4 +1,4 @@
-drop table if exists products;
+drop table if exists houses;
 
 create table houses (
     house_id serial primary key,
@@ -6,10 +6,10 @@ create table houses (
     address text,
     city text,
     state text,
-    zip number
+    zip integer
 );
 
 insert into houses (property_name, address, city, state, zip)
 VALUES
-('Big house', '22 lane', 'amsterdam', 11235),
-('Humble home', '33 drive', 'tokyo', 31415);
+('Big house', '22 lane', 'amsterdam', 'netherlands', 11235),
+('Humble home', '33 drive', 'tokyo', 'japan', 31415);
