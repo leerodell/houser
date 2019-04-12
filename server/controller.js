@@ -58,26 +58,13 @@ module.exports = {
             .send({ message: "Server error", err });
         });
     },
-    deleteHouse(req, res) {
-      let { id } = req.params;
-      //SWITCH FROM PARAM TO QUERY FOR POINTS
-  
-      if (!parseInt(id, 10)) {
-        return res
-          .status(400)
-          .send({ message: "Invalid or missing 'id' on request" });
-      }
-      id = parseInt(id, 10);
-      const db = req.app.get("db");
-      db.delete_house([id])
-        .then(houses => {
-          res.status(200).send(houses);
-        })
-        .catch(err => {
-          console.error("Error in deleteHouse sql", err);
-          res
-            .status(500)
-            .send({ message: "An Error has occurred on the server", err });
-        });
-    }
-  };
+    deleteHouse: (req,res,next) =>{
+      const db = req.app.get("db")
+      const { id } = req.query
+      console.log("id ", id)
+      db.delete_house(id).then(houses =>{
+          res.status(200).send(houses)
+      }).catch(err =>{console.log("Error Error", err)})
+}
+}
+

@@ -20,7 +20,7 @@ app.get("/api/houses", controller.getHouses);
 app.post("/api/houses", controller.addHouse);
 app.put("/api/houses/:id", controller.updateHouse);
 // app.put("/api/houses", controller.updateHouse);
-app.delete("/api/houses/:id", controller.deleteHouse);
+app.delete("/api/houses", controller.deleteHouse);
 app.listen(SERVER_PORT || 4005, () =>
   console.log(`Server started, port: SERVER_PORT`)
 );
