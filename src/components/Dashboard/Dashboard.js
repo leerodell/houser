@@ -1,12 +1,12 @@
-import React, { Component } from "react";
-import axios from "axios";
+// import React, { Component } from "react";
+// import axios from "axios";
 
-export default class Dashboard extends Component {
-    constructor(props){
-        super(props)
-        render() {
+// export default class Dashboard extends Component {
+//     constructor(props){
+//         super(props)
+//         render() {
             
-            return <div className="dashboard">{productDisplay}</div>
-        }
-    }
-}
+//             return <div className="dashboard">{productDisplay}</div>
+//         }
+//     }
+// }

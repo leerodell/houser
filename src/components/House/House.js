@@ -1,12 +1,12 @@
-import React, { Component } from "react";
-import axios from "axios";
+// import React, { Component } from "react";
+// import axios from "axios";
 
-export default class House extends Component {
-    constructor(props){
-        super(props)
-        render() {
+// export default class House extends Component {
+//     constructor(props){
+//         super(props)
+//         render() {
             
-            return <div className="house">{productDisplay}</div>
-        }
-    }
-}
+//             return <div className="house">{productDisplay}</div>
+//         }
+//     }
+// }
