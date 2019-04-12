@@ -11,7 +11,7 @@ class App extends Component {
         <header>
         <h1>Houser</h1>
           <Link to="/">Dashboard</Link>
-          <Link to="/add">Wizard</Link>
+          <Link to="/wizard">Wizard</Link>
         </header>
       </div>
     );

@@ -14,8 +14,11 @@ module.exports = {
         });
     },
     
-    addHouses(req, res) {
+    addHouse(req, res) {
       const db = req.app.get("db");
+
+// **DESTRUCTURE**
+
       const { property_name, address, city, state, zip } = req.body;
   
       db.add_house([property_name, address, city, state, zip])
